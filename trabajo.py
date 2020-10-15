@@ -32,11 +32,18 @@ class Trabajo:
             return True
         return False
 
-    def modificar_descripcion(self, descripcion, id_trabajo):
+    def modificar_fechaIngreso(self, fecha_ingreso, id_trabajo):
         trabajo = self._buscar_por_id(id_trabajo)
         if trabajo:
-            trabajo.descripcion = descripcion
+            trabajo.fecha_ingreso = fecha_ingreso
             return True
         return False
     
+    def modificar_fechaPropuesta(self, fecha_entrega_propuesta, id_trabajo):
+        trabajo = self._buscar_por_id(id_trabajo)
+        if trabajo:
+            trabajo.fecha_entrega_propuesta = fecha_entrega_propuesta
+            return True
+        return False
+        
 
