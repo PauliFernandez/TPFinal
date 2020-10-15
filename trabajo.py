@@ -1,5 +1,5 @@
 #! /usr/bin/python3
-
+from guardar_trabajo import Guardar_trabajo
 import datetime
 
 class Trabajo:
@@ -16,4 +16,27 @@ class Trabajo:
         self.descripcion = descripcion
         self.retirado = retirado
         self.id_trabajo = id_trabajo
+
+    def _buscar_por_id(self, id_nota):
+        '''Buscar la nota con el id dado'''
+        for buscar_id in self.gurdar_trabajo:
+            if buscar_id.id == int(id_trabajo):
+                return buscar_id
+
+        return None
+
+    def modificar_descripcion(self, descripcion, id_trabajo):
+        trabajo = self._buscar_por_id(id_trabajo)
+        if trabajo:
+            trabajo.descripcion = descripcion
+            return True
+        return False
+
+    def modificar_descripcion(self, descripcion, id_trabajo):
+        trabajo = self._buscar_por_id(id_trabajo)
+        if trabajo:
+            trabajo.descripcion = descripcion
+            return True
+        return False
+    
 
