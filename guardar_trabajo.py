@@ -45,3 +45,11 @@ class Guardar_trabajo:
             return self.rt.delete(t)
         return None
 
+    def trabajo_terminado(self, fecha_entrega_real, id_trabajo):
+        t = self.buscar_por_id(id_trabajo)
+        if t:
+            t.fecha_entrega_real = fecha_entrega_real
+            return self.rt.update(t)
+        return None
+
+
