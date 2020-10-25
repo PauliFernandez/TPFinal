@@ -30,4 +30,3 @@ class Guardar_trabajo:
             t.descripcion = descripcion
             return self.rt.update(t)
         return False
-    

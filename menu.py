@@ -231,3 +231,22 @@ class Menu:
         for trabajo in listatrabajo:
             print(trabajo)
 
+
+     def modificar_trabajo(self):
+        lista = self.lista_trabajo.listatrabajo
+        for tr in lista:
+            print(tr)
+        id_trabajo = int(input("Ingrese el id del trabajo a modificar: "))
+        if id_trabajo == tr:
+            opc = int(input(""""Elija una opción para modificar o eliminar un trabajo:
+                     1. Descripción
+                     2. Fecha de ingreso
+                     3. Eliminar trabajo
+                     0. Salir """))
+            if opc == 1:
+                descrpicion = input("Ingrese la nueva descripción: ")
+                t = self.lista_trabajo.modificar_descripcion(descrpicion, id_trabajo)
+                if t == None:
+                    print("ERROR AL MODIFICAR TRABAJO")
+                else:
+                    print("MODIFICADO CORRECTAMENTE")
