@@ -17,33 +17,10 @@ class Trabajo:
         self.retirado = retirado
         self.id_trabajo = id_trabajo
 
-    def _buscar_por_id(self, id_nota):
-        '''Buscar la nota con el id dado'''
-        for buscar_id in self.gurdar_trabajo:
-            if buscar_id.id == int(id_trabajo):
-                return buscar_id
-
-        return None
-
-    def modificar_descripcion(self, descripcion, id_trabajo):
-        trabajo = self._buscar_por_id(id_trabajo)
-        if trabajo:
-            trabajo.descripcion = descripcion
-            return True
-        return False
-
-    def modificar_fechaIngreso(self, fecha_ingreso, id_trabajo):
-        trabajo = self._buscar_por_id(id_trabajo)
-        if trabajo:
-            trabajo.fecha_ingreso = fecha_ingreso
-            return True
-        return False
-    
-    def modificar_fechaPropuesta(self, fecha_entrega_propuesta, id_trabajo):
-        trabajo = self._buscar_por_id(id_trabajo)
-        if trabajo:
-            trabajo.fecha_entrega_propuesta = fecha_entrega_propuesta
-            return True
-        return False
+    def __str__(self):
+        cadena = f"ID: {self.id_trabajo}\nDescripción: {self.descripcion}\nTipo de cliente: {self.cliente}\n"
+        cadena += f"Fechas:\nFecha de ingreso: {self.fecha_ingreso} \n fecha de entrega propuesta {self.fecha_entrega_propuesta} \n fecha de entrega relal {self.fecha_entrega_real}\n"
+        cadena += f" retirado - {self.retirado}\n"
+        return cadena
         
 
