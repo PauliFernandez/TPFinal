@@ -197,3 +197,30 @@ class Menu:
                 print(i)
             else:
                 print("El id escrito no existe")
+
+
+     def agregar_trabajo(self):
+        listatrabajo = self.lista_clientes.lista
+        for cliente in listatrabajo:
+            print(cliente)
+        filtro = int(input("Buscar id: "))
+        for i in listatrabajo:
+            if i.id_cliente == filtro:
+                print(i)
+                cliente = i
+                fecha_ingreso = date.today()
+                print("Fecha de entrega propuesta")
+                anio = int(input("Ingrese el año : "))
+                mes = int(input("Ingrese el mes: "))
+                dia = int(input("Ingrese el dia: "))
+                fecha_entrega_propuesta = date(anio, mes, dia)
+                descripcion = input("Ingrese una descirpción de trabajo: ")
+                t = self.lista_trabajo.NuevoTrabajo(cliente, fecha_ingreso, fecha_entrega_propuesta, descripcion)
+                if t is None:
+                    print(" Error al cargar trabajo")
+                else:
+
+                    print(" Trabajo cargado correctamente")
+            else:
+                print("Cliente no encontrado")
+                
