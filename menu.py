@@ -269,3 +269,20 @@ class Menu:
                     print("BORRADO CORRECTAMENTE")
         else:
             print("El id no existe")
+
+
+     def trabajo_terminado(self):
+        print("Indicar un trabajo que fue terminado")
+        lista = self.lista_trabajo.listatrabajo
+        for tr in lista:
+            print(tr)
+        id_trabajo = int(input("ID del trabajo terminado: "))
+        if id == tr:
+            fecha_entrega_real = date.today()
+            t = self.lista_trabajo.trabajo_terminado(fecha_entrega_real, id_trabajo)
+            if t == None:
+                print("ERROR AL TERMINAR TRABAJO")
+            else:
+                print("TRABAJO TERMINADO CORRECTAMENTE")
+        else:
+            print("El id no existe")
