@@ -30,3 +30,12 @@ class Guardar_trabajo:
             t.descripcion = descripcion
             return self.rt.update(t)
         return False
+
+    def modificar_fecha_ingreso(self, fecha_ingreso, id_trabajo):
+        t = self.buscar_por_id(id_trabajo)
+        if t:
+            t.fecha_ingreso = fecha_ingreso
+            return self.rt.update(t)
+        return False
+
+
