@@ -230,4 +230,4 @@ class Menu:
             listatrabajo = self.lista_trabajo.listatrabajo
         for trabajo in listatrabajo:
             print(trabajo)
-            
+

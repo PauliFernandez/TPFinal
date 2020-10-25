@@ -23,3 +23,11 @@ class Guardar_trabajo:
             if buscar_id.id_trabajo == int(id_trabajo):
                 return (buscar_id)
         return None
+
+    def modificar_descripcion(self, descripcion, id_trabajo):
+        t = self.buscar_por_id(id_trabajo)
+        if t:
+            t.descripcion = descripcion
+            return self.rt.update(t)
+        return False
+    
