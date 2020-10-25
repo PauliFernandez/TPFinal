@@ -223,3 +223,11 @@ class Menu:
                     print(" Trabajo cargado correctamente")
             else:
                  print("Cliente no encontrado")
+
+
+     def mostrar_trabajo(self, listatrabajo=None):
+        if listatrabajo == None:
+            listatrabajo = self.lista_trabajo.listatrabajo
+        for trabajo in listatrabajo:
+            print(trabajo)
+            
