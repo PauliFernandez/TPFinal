@@ -222,5 +222,4 @@ class Menu:
 
                     print(" Trabajo cargado correctamente")
             else:
-                print("Cliente no encontrado")
-                
+                 print("Cliente no encontrado")
