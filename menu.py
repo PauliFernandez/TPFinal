@@ -250,3 +250,12 @@ class Menu:
                     print("ERROR AL MODIFICAR TRABAJO")
                 else:
                     print("MODIFICADO CORRECTAMENTE")
+        if opc == 2:
+            anio = int(input("Ingrese el año : "))
+            mes = int(input("Ingrese el mes: "))
+            dia = int(input("Ingrese el dia: "))
+            t = self.lista_trabajo.modificar_fecha_ingreso(date(anio, mes, dia), id_trabajo)
+            if t == None:
+                print("ERROR AL MODIFICAR TRABAJO")
+            else:
+                print("MODIFICADO CORRECTAMENTE")
