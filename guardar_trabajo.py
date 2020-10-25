@@ -38,4 +38,10 @@ class Guardar_trabajo:
             return self.rt.update(t)
         return False
 
+    def eliminar_trabajo(self, id_trabajo):
+        ''' elimina un cliente cancelado'''
+        t = self.buscar_por_id(id_trabajo)
+        if t:
+            return self.rt.delete(t)
+        return None
 
