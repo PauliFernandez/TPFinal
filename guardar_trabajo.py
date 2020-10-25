@@ -16,3 +16,10 @@ class Guardar_trabajo:
         else:
             self.listatrabajo.append(t)
             return t
+
+    def buscar_por_id(self, id_trabajo):
+        '''Buscar al cliente con el id dado'''
+        for buscar_id in self.listatrabajo:
+            if buscar_id.id_trabajo == int(id_trabajo):
+                return (buscar_id)
+        return None
