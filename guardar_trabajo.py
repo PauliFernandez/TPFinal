@@ -52,4 +52,10 @@ class Guardar_trabajo:
             return self.rt.update(t)
         return None
 
+    def trabajo_entregado(self, retirado, id_trabajo):
+        t = self.buscar_por_id(id_trabajo)
+        if t:
+            t.retirado = retirado
+            return self.rt.update(t)
+        return None
 

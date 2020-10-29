@@ -89,3 +89,10 @@ class Guardar_Cliente:
             clientes.telefono_contacto = telefono_contacto
             return self.rc.update(clientes)
         return False
+
+    def buscar(self, filtro):
+        notas_encontradas = []
+        for c_notas in self.lista:
+            if c_notas.coincide(filtro):
+                notas_encontradas.append(c_notas)
+        return notas_encontradas
