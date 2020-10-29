@@ -223,8 +223,8 @@ class Menu:
      def agregar_trabajo(self):
         print("Agregar trabajo:")
         listatrabajo = self.lista_clientes.lista
-        for cliente in listatrabajo:
-            print(cliente)
+        for clienteS in listatrabajo:
+            print(clienteS)
         filtro = int(input("Buscar id: "))
         for i in listatrabajo:
             if i.id_cliente == filtro:
@@ -260,7 +260,7 @@ class Menu:
                          0. Salir 
                          : """))
         if opc == 1:
-            filtro = int(input("Ingrese id: "))
+            filtro = int(input("Ingrese Id: "))
             for i in listas:
                 if i.id_trabajo == filtro:
                     print(i)
@@ -282,7 +282,7 @@ class Menu:
         lista = self.lista_trabajo.listatrabajo
         for tr in lista:
             print(tr)
-        id_trabajo = int(input("Ingrese el id del trabajo a modificar: "))
+        id_trabajo = int(input("Ingrese el Id del trabajo a modificar: "))
         opc = int(input(""""Elija una opción para modificar o eliminar un trabajo:
                          1. Descripción
                          2. Fecha de ingreso
@@ -326,7 +326,7 @@ class Menu:
         listas = self.lista_trabajo.listatrabajo
         for clientec in listas:
             print(clientec)
-        id_trabajo = int(input("Ingrese el id del trabajo que desea terminar: "))
+        id_trabajo = int(input("Ingrese el Id del trabajo que desea terminar: "))
         fecha_entrega_real = date.today()
         t = self.lista_trabajo.trabajo_terminado(fecha_entrega_real, id_trabajo)
         if t == None:
@@ -339,7 +339,7 @@ class Menu:
          listas = self.lista_trabajo.listatrabajo
          for clientec in listas:
              print(clientec)
-         id_trabajo = int(input("Ingrese el id del trabajo que desea retirar: "))
+         id_trabajo = int(input("Ingrese el Id del trabajo que desea retirar: "))
          t = self.lista_trabajo.trabajo_entregado(True, id_trabajo)
          if t == None:
                         print("ERROR AL TERMINAR TRABAJO")
@@ -350,7 +350,7 @@ class Menu:
          for listaS in self.lista_clientes.lista:
           print(listaS)
          listat = self.lista_trabajo.listatrabajo
-         id = int(input("Ingrese el id del cliente: "))
+         id = int(input("Ingrese el Id del cliente: "))
          for i in listat:
             if i.cliente.id_cliente == id:
                     print("ID trabajo: ", i.id_trabajo)
@@ -360,9 +360,6 @@ class Menu:
                     print("fecha de entrega real", i.fecha_entrega_real)
                     print("retirado", i.retirado)
                     print("----------------------")
-
-
-
 
      def salir(self):
         print("Gracias por utilizar el sistema.")
