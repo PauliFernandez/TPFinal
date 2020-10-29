@@ -50,12 +50,14 @@ class Menu:
                 print("{0} no es una opción válida".format(opcion))
 
      def mostrar_clientes(self, lista=None):
+        print("Mostrar clientes: ")
         if lista == None:
             lista = self.lista_clientes.lista
         for cliente in lista:
             print(cliente)
 
      def nuevo_cliente(self):
+        print("Agregar nuevo cliente: ")
         tipo = "A"
         while tipo not in ("C", "c", "P", "p"):
             tipo = input("Ingrese el tipo de cliente: C:Corporativo / P: Particular")
@@ -79,27 +81,27 @@ class Menu:
 
 
      def modificar_cliente_particular(self):
+         print("Modificar cliente particular: ")
          listas = self.lista_clientes.lista
          for clientec in listas:
              print(clientec)
-         id_cliente = int(input("Ingrese el id del cliente que desea modificar"))
-         if clientec.id_cliente == id_cliente:
-                    opc = int(input(""""Elija una opción para modificar o eliminar un trabajo:
+         id_cliente = int(input("Ingrese el id del cliente particular que desea modificar"))
+         opc = int(input(""""Elija una opción para modificar o eliminar un trabajo:
                                      1. Nombre
                                      2. Apellido
                                      3. Teléfono
                                      4. Mail
                                      5. Eliminar cliente
                                      0. Salir
-                                     """))
-                    if opc == 1:
+                                     : """))
+         if opc == 1:
                         nombre = input("Ingrese el nuevo nombre: ")
                         c = self.lista_clientes.modificar_nombre(nombre, id_cliente)
                         if c == None:
                             print("ERROR AL MODIFICAR CLIENTE")
                         else:
                             print("MODIFICADO CORRECTAMENTE")
-                    if opc == 2:
+         if opc == 2:
                         apellido = input("Ingrese el nuevo apellido: ")
                         c = self.lista_clientes.modificar_apellido(apellido, id_cliente)
                         if c == None:
@@ -107,7 +109,7 @@ class Menu:
                         else:
                             print("MODIFICADO CORRECTAMENTE")
 
-                    if opc == 3:
+         if opc == 3:
                         telefono = input("Ingrese el nuevo telefono: ")
                         c = self.lista_clientes.modificar_telefono(telefono, id_cliente)
                         if c == None:
@@ -115,7 +117,7 @@ class Menu:
                         else:
                             print("MODIFICADO CORRECTAMENTE")
 
-                    if opc == 4:
+         if opc == 4:
                         mail = input("Ingrese el nuevo mail: ")
                         c = self.lista_clientes.modificar_mail(mail, id_cliente)
                         if c == None:
@@ -123,20 +125,20 @@ class Menu:
                         else:
                             print("MODIFICADO CORRECTAMENTE")
 
-                    if opc == 5:
+         if opc == 5:
                         c = self.lista_clientes.eliminar_cliente(id_cliente)
                         if c == None:
                             print("ERROR AL BORRAR CLIENTE")
                         else:
                             print("BORRADO CORRECTAMENTE")
-         else:
-                    print("El id no existe")
+
 
      def modificar_cliente_corporativo(self):
+         print("Modificar cliente corporativo: ")
          listas = self.lista_clientes.lista
          for clientec in listas:
              print(clientec)
-         id_cliente = int(input("Ingrese el id del cliente que desea modificar"))
+         id_cliente = int(input("Ingrese el id del cliente corporativo que desea modificar"))
          if clientec.id_cliente == id_cliente:
                  opc = int(input(""""Elija una opción para modificar o eliminar un trabajo:
                     1. Nombre empresa
@@ -146,7 +148,7 @@ class Menu:
                     5. Mail
                     6. Eliminar cliente
                     0. Salir
-                        """))
+                    :   """))
                  if opc == 1:
                   nombre_empresa = input("Ingrese el nuevo nombre de la empresa: ")
                   c = self.lista_clientes.modificar_nombre_empresa(nombre_empresa, id_cliente)
@@ -193,96 +195,78 @@ class Menu:
              print("El id no existe")
 
      def buscar_cliente(self):
+         print("Buscar cliente: ")
          listas = self.lista_clientes.lista
          for clientec in listas:
              print(clientec)
-         id_cliente = int(input("Ingrese el id del cliente que desea modificar"))
-         if clientec.id_cliente == id_cliente:
-            opc = int(input(""""Elija una opción para buscar un trabajo:
+         opc = int(input(""""Elija una opción para buscar un trabajo:
                                      1. Id cliente
                                      2. Teléfono
                                      3. Mail
                                      0. Salir """))
-            if opc == 1:
-                filtro = int(input("Buscar : "))
+         if opc == 1:
+                filtro = int(input("Ingrese Id: "))
                 for i in listas:
                     if i.id_cliente == filtro:
                         print(i)
-                    else:
-                        print("El id escrito no existe")
-            if opc == 2:
-                filtro = input("Buscar : ")
+                        print("-------------------------")
+         if opc == 2:
+                filtro = input("Ingrese teléfono: ")
                 for i in listas:
                     if i.telefono == filtro:
                         print(i)
-                    else:
-                        print("El id escrito no existe")
-            if opc == 3:
-                filtro = input("Buscar : ")
+                        print("-------------------------")
+         if opc == 3:
+                filtro = input("Ingrese mail: ")
                 for i in listas:
                     if i.mail == filtro:
                         print(i)
-                    else:
-                        print("El id escrito no existe")
-         else:
-             print("El id no existe")
+                        print("-------------------------")
 
 
      def agregar_trabajo(self):
+        print("Agregar trabajo:")
         listatrabajo = self.lista_clientes.lista
         for clientet in listatrabajo:
             print(clientet)
-        filtro = int(input("Buscar id: "))
-        if clientet.id_cliente == filtro:
-                cliente = clientet
-                fecha_ingreso = date.today()
-                print("Fecha de entrega propuesta")
-                anio = int(input("Ingrese el año : "))
-                mes = int(input("Ingrese el mes: "))
-                dia = int(input("Ingrese el dia: "))
-                fecha_entrega_propuesta = date(anio, mes, dia)
-                descripcion = input("Ingrese una descirpción de trabajo: ")
-                t = self.lista_trabajo.NuevoTrabajo(cliente, fecha_ingreso, fecha_entrega_propuesta, descripcion)
-                if t is None:
+        filtro = int(input("Buscar id del cliente: "))
+        cliente = clientet
+        fecha_ingreso = date.today()
+        print("Fecha de entrega propuesta")
+        anio = int(input("Ingrese el año: "))
+        mes = int(input("Ingrese el mes: "))
+        dia = int(input("Ingrese el dia: "))
+        fecha_entrega_propuesta = date(anio, mes, dia)
+        descripcion = input("Ingrese una descirpción de trabajo: ")
+        t = self.lista_trabajo.NuevoTrabajo(cliente, fecha_ingreso, fecha_entrega_propuesta, descripcion)
+        if t is None:
                     print(" Error al cargar trabajo")
-                else:
+        else:
 
                     print(" Trabajo cargado correctamente")
-        else:
-            print("El id no existe")
 
 
      def buscar_trabajo(self):
-         listatrabajo = self.lista_clientes.lista
-         for clientet in listatrabajo:
-             print(clientet)
-         filtro = int(input("Buscar id: "))
-         if clientet.id_cliente == filtro:
-            opc = int(input(""""Elija una opción para buscar un trabajo:
-                             1. Descripción
-                             2. Fecha de ingreso
-                             3. Eliminar trabajo
-                             0. Salir """))
-
-            if opc == 1:
-                filtro = input("Buscar : ")
-                for i in clientet:
-                    if i.descripcion == filtro:
-                        print(i)
-            if opc == 2:
-                filtro = int(input("Buscar : "))
-                for i in clientet:
-                    if i.id_trabajo == filtro:
-                        print(i)
-            if opc == 3:
-                filtro = input("Buscar : ")
-                for i in clientet:
-                    if i.retirado == filtro:
-                        print(i)
-         else:
-             print("El id no existe")
+        print("Buscar trabajo")
+        listas = self.lista_trabajo.listatrabajo
+        opc = int(input(""""Elija una opción para buscar un trabajo:
+                         1. Id trabajo
+                         2. Descrpción
+                         0. Salir 
+                         : """))
+        if opc == 1:
+            filtro = int(input("Ingrese id: "))
+            for i in listas:
+                if i.id_trabajo == filtro:
+                    print(i)
+        if opc == 2:
+            filtro = input("Ingrese descripción: ")
+            for i in listas:
+                if i.descripcion == filtro:
+                    print(i)
 
      def mostrar_trabajo(self, listatrabajo=None):
+        print("Trabajos:  ")
         if listatrabajo == None:
             listatrabajo = self.lista_trabajo.listatrabajo
         for trabajo in listatrabajo:
@@ -290,17 +274,18 @@ class Menu:
 
 
      def modificar_trabajo(self):
-         lista = self.lista_trabajo.listatrabajo
-         for tr in lista:
-             print(tr)
+         listas = self.lista_trabajo.listatrabajo
+         for clientec in listas:
+             print(clientec)
          id_trabajo = int(input("Ingrese el id del trabajo que desea modificar"))
-         for i in lista:
-            if i.id_trabajo == id_trabajo:
+         if clientec.id_trabajo == id_trabajo:
+            if clientec.id_trabajo == id_trabajo:
              opc = int(input(""""Elija una opción para modificar o eliminar un trabajo:
                      1. Descripción
                      2. Fecha de ingreso
                      3. Eliminar trabajo
-                     0. Salir """))
+                     0. Salir
+                      : """))
              if opc == 1:
                     descrpicion = input("Ingrese la nueva descripción: ")
                     t = self.lista_trabajo.modificar_descripcion(descrpicion, id_trabajo)
@@ -323,16 +308,17 @@ class Menu:
                         print("ERROR AL BORRAR CLIENTE")
                     else:
                         print("BORRADO CORRECTAMENTE")
+         else:
+             print("El id no existe")
 
 
      def trabajo_terminado(self):
         print("Indicar un trabajo que fue terminado")
-        lista = self.lista_trabajo.listatrabajo
-        for tr in lista:
-            print(tr)
-        id_trabajo = int(input("Ingrese el id del trabajo"))
-        for i in lista:
-            if i.id_cliente == id_trabajo:
+        listas = self.lista_trabajo.listatrabajo
+        for clientec in listas:
+            print(clientec)
+        id_trabajo = int(input("Ingrese el id del trabajo que desea terminar: "))
+        if clientec.id_trabajo == id_trabajo:
                 fecha_entrega_real = date.today()
                 t = self.lista_trabajo.trabajo_terminado(fecha_entrega_real, id_trabajo)
                 if t == None:
@@ -342,16 +328,14 @@ class Menu:
 
      def trabajo_retirado(self):
          print("Indicar si el trabajo fue retirado")
-         lista = self.lista_trabajo.listatrabajo
-         for tr in lista:
-             print(tr)
-         id_trabajo = int(input("Ingrese el id del trabajo que desea modificar"))
-         for i in lista:
-             if i.id_cliente == id_trabajo:
-                 t = self.lista_trabajo.trabajo_entregado(True, id_trabajo)
-                 if t == None:
+         listas = self.lista_trabajo.listatrabajo
+         for clientec in listas:
+             print(clientec)
+         id_trabajo = int(input("Ingrese el id del trabajo que desea retirar: "))
+         t = self.lista_trabajo.trabajo_entregado(True, id_trabajo)
+         if t == None:
                         print("ERROR AL TERMINAR TRABAJO")
-                 else:
+         else:
                         print("TRABAJO TERMINADO CORRECTAMENTE")
 
      def informe(self):
@@ -367,6 +351,7 @@ class Menu:
                     print ("fecha de entrega propuesta", i.fecha_entrega_propuesta)
                     print("fecha de entrega real", i.fecha_entrega_real)
                     print("retirado", i.retirado)
+                    print("----------------------")
 
 
 
