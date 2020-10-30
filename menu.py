@@ -24,19 +24,13 @@ class Menu:
      def mostrar_menu(self):
         print(
             """Menú del anotador:
-        1. Mostrar clientes
-        2. Nuevo cliente
-        3. Modificar cliente particular
-        4. Modificar cliente corporativo
-        5. Buscar cliente
-        6. Agregar trabajo
-        7. Mostrar trabajo
-        8. Modificar trabajo
-        9. Terminar un trabajo
-        10. Irabajo retirado
-        11. Buscar trabajo
-        12. Informe
-        : """)
+        1. Mostrar clientes                         7. Mostrar trabajo
+        2. Nuevo cliente                            8. Modificar trabajo
+        3. Modificar cliente particular             9. Terminar un trabajo
+        4. Modificar cliente corporativo            10. Irabajo retirado
+        5. Buscar cliente                           11. Buscar trabajo
+        6. Agregar trabajo                          12. Informe
+        """)
 
      def ejecutar(self):
         # Mostrar el menu y responder a las opciones.
@@ -347,6 +341,7 @@ class Menu:
                         print("TRABAJO TERMINADO CORRECTAMENTE")
 
      def informe(self):
+         print("Podrá visualizar los trabajos que tenga un cliente")
          for listaS in self.lista_clientes.lista:
           print(listaS)
          listat = self.lista_trabajo.listatrabajo
