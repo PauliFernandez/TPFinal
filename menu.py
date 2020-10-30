@@ -54,12 +54,13 @@ class Menu:
         print("Agregar nuevo cliente: ")
         tipo = "A"
         while tipo not in ("C", "c", "P", "p"):
-            tipo = input("Ingrese el tipo de cliente: C:Corporativo / P: Particular")
-        nombre = input("Ingrese el nombre: ")
+            tipo = input("Ingrese el tipo de cliente: C:Corporativo / P: Particular: ")
         if tipo in ("C", "c"):
+             nombre = input("Ingrese el nombre de la empresa: ")
              contacto = input("Ingrese el nombre del contacto: ")
              tc = input("Ingrese el teléfono del contacto: ")
         else:
+                nombre = input("Ingrese el nombre: ")
                 apellido = input("Ingrese el apellido: ")
         tel = input("Ingrese el teléfono: ")
         mail = input("Ingrese el correo electrónico: ")
