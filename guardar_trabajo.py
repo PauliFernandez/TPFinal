@@ -58,4 +58,3 @@ class Guardar_trabajo:
             t.retirado = retirado
             return self.rt.update(t)
         return None
-

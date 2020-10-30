@@ -316,7 +316,6 @@ class Menu:
             else:
                 print("CANCELADO CORRECTAMENTE")
 
-
      def trabajo_terminado(self):
         print("Indicar un trabajo que fue terminado")
         listas = self.lista_trabajo.listatrabajo
