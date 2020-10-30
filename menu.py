@@ -316,6 +316,7 @@ class Menu:
             else:
                 print("CANCELADO CORRECTAMENTE")
 
+
      def trabajo_terminado(self):
         print("Indicar un trabajo que fue terminado")
         listas = self.lista_trabajo.listatrabajo
@@ -337,9 +338,9 @@ class Menu:
          id_trabajo = int(input("Ingrese el Id del trabajo que desea retirar: "))
          t = self.lista_trabajo.trabajo_entregado(True, id_trabajo)
          if t == None:
-                        print("ERROR AL TERMINAR TRABAJO")
+                        print("ERROR AL RETIRAR TRABAJO")
          else:
-                        print("TRABAJO TERMINADO CORRECTAMENTE")
+                        print("TRABAJO RETIRADO CORRECTAMENTE")
 
      def informe(self):
          print("Podrá visualizar los trabajos que tenga un cliente")
