@@ -25,7 +25,7 @@ class Menu:
         print(
             """Menú del anotador:
         1. Mostrar clientes                         7. Mostrar trabajo
-        2. Nuevo cliente                            8. Modificar trabajo
+        2. Nuevo cliente                            8. Modificar o cancelar trabajo
         3. Modificar cliente particular             9. Terminar un trabajo
         4. Modificar cliente corporativo            10. Irabajo retirado
         5. Buscar cliente                           11. Buscar trabajo
@@ -273,6 +273,7 @@ class Menu:
 
 
      def modificar_trabajo(self):
+        print("Modificar o cancelar trabajo")
         lista = self.lista_trabajo.listatrabajo
         for tr in lista:
             print(tr)
@@ -280,7 +281,7 @@ class Menu:
         opc = int(input(""""Elija una opción para modificar o eliminar un trabajo:
                          1. Descripción
                          2. Fecha de ingreso
-                         3. Eliminar trabajo
+                         3. Cancelar trabajo
                          0. Salir 
                          : """))
         if opc == 1:
@@ -310,9 +311,9 @@ class Menu:
             t = self.lista_trabajo.eliminar_trabajo(id_trabajo)
             self.lista_trabajo = Guardar_trabajo()
             if t == None:
-                print("ERROR AL BORRAR CLIENTE")
+                print("ERROR AL CANCELAR TRABAJO")
             else:
-                print("BORRADO CORRECTAMENTE")
+                print("CANCELADO CORRECTAMENTE")
 
 
      def trabajo_terminado(self):
