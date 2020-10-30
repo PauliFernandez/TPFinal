@@ -155,7 +155,7 @@ class Menu:
                             print("MODIFICADO CORRECTAMENTE")
          if opc == 3:
                   telefono_contacto = input("Ingrese el nuevo teléfono del contacto: ")
-                  c = self.lista_clientes.modificar_nombre_empresa(telefono_contacto, id_cliente)
+                  c = self.lista_clientes.modificar_telefono_contacto(telefono_contacto, id_cliente)
                   if c is None:
                             print("ERROR AL MODIFICAR CLIENTE")
                   else:

@@ -2,7 +2,6 @@
 from repositorio import Repositorio
 from clienteParticular import ClienteParticular
 from clienteCorporativo import ClienteCorporativo
-
 class RepositorioClientes(Repositorio):
     '''Gestiona el almacenamiento de los clientes en la Base de Datos.'''
 
